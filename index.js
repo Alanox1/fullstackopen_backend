@@ -36,9 +36,9 @@ app.get('/api/notes', (request,response) => {
 
 app.get('/api/notes/:id' , (request,response) => {
   const id = Number(request.params.id)
-  console.log(id)
+  // console.log(id)
   const note = notes.find(note => {
-    console.log(note.id, typeof note.id, id, typeof id, note.id === id)
+    // console.log(note.id, typeof note.id, id, typeof id, note.id === id)
     return note.id === id
   })
 
@@ -85,10 +85,8 @@ app.post('/api/notes', (request, response) => {
     id: generateId(),
   }
 
-  console.log(note)
+  // console.log(note)
  
-  console.log(request.headers)
-
  notes = notes.concat(note)
 
   response.json(note)
@@ -96,7 +94,7 @@ app.post('/api/notes', (request, response) => {
 
 
 
-const PORT = 3001
+const PORT = process.env.PORT || 3001
 app.listen(PORT , () => {
     console.log(`Server running on port ${PORT}`);
 })
