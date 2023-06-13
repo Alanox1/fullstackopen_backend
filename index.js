@@ -3,8 +3,10 @@ console.log('hello world')
 const express = require('express')
 const app = express()
 const cors = require('cors')
+app.use(express.static('build'))
 app.use(express.json())
 app.use(cors())
+
 let notes = [
     {
       id: 1,
@@ -14,7 +16,7 @@ let notes = [
     },
     {
       id: 2,
-      content: "Browser can execute only Javascript",
+      content: "dios",
       date: "2019-05-30T18:39:34.091Z",
       important: false
     },
